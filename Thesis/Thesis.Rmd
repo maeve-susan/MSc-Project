@@ -603,7 +603,7 @@ Overall, it is observed that permutation test results support previous evidence 
 
 ## FPCA
 
-FPCA was able to explain 95% of the variability in the curves by using three principal components (i.e. the three main modes of variation). Subjects with higher scores for FPC 1 had a similar trajectory to that of the eigenfunction as the score indicates how closely a curve aligns with the eigenfunction in question. The trajectories of the top scores for FPC 2 and FPC 3 followed similar trajectories to their eigenfunctions however it a was far less pronounced than similarity than that of FPC 1. This is likely due to the fact that FPC 1 explains far more of the variability in curves than FPC 2 or FPC 3.
+FPCA was able to explain 95% of the variability in the curves using three principal components, representing the three dominant modes of variation within the data. Subjects with higher scores for FPC 1 had a similar trajectory to that of the eigenfunction as the score indicates how closely a curve aligns with the eigenfunction in question. The trajectories of the top scores for FPC 2 and FPC 3 followed similar trajectories to their eigenfunctions, however, these similarities were less pronounced than those observed for FPC1. This is likely due to the fact that FPC 1 explains far more of the variability in curves than FPC 2 or FPC 3.
 
 ### K-means Clustering
 
@@ -613,7 +613,7 @@ The k-means clusters indicate that there may be some predictive power in the FPC
 
 The mFPCA results demonstrated that meaningful variation existed at both subject and trial level ($1$ and $2$). The presence of substantial level 2 variability motivates the use of mFPCA, confirming that using repeated EEG trials contain valuable information rather than simply measuring noise.
 
-Interestingly, we see differences between the mFPCA level 1 eigenfunctions and those obtained using standard FPCA. This is expected due to the additional inherently noisy EEG data across multiple conditions and repeated trials. We observe a cleaner representation of subject-level differences following the introduction of additional data, and the account for within-subject variability. This finding is consistent with previous work which suggested that between EEG trials may itself be informative in schizophrenia.
+Interestingly, differences were observed between the Level 1 eigenfunctions obtained from mFPCA and those obtained using standard FPCA. This is not unexpected due to the additional inherently noisy EEG data across multiple conditions and repeated trials. We observe a cleaner representation of subject-level differences following the introduction of additional data, and the account for within-subject variability. This finding is consistent with previous work which suggested that between EEG trials may itself be informative in schizophrenia.
 
 
 ### K-means clustering
@@ -665,10 +665,9 @@ Reducing the proportion of variability explained from 95% to 90% changed both th
 
 The all-conditions models previously performed very well; however, here it performs far worse than before. Similarly, the condition 1 model with the 90% variability explained performs worse still than the two-node model and the four-node model. 
 
-The all-conditions model had an AUC of 0.655 and an accuracy of 49.63%, performing worse than random guessing at our 0.5 threshold. Its Brier score is similarly quite large at 0.483. The condition 1 model performs even worse than this, with an AUC of 0.512, indicating that the model performs hardly any better than random guessing, an accuracy of 41.33%, and a Brier score of 0.576. These models are also poorly calibrated, indicating overfitting and evidence that the model systematically underpredicts the risk of schizophrenia.
+The all-conditions model had an AUC of 0.655 and an accuracy of 49.63%, performing worse than random guessing at our 0.5 threshold. Its Brier score is similarly quite large at 0.483. The condition 1 model performs even worse than this, with an AUC of 0.512, which is only marginally above the value expected under random classification (AUC = 0.5), an accuracy of 41.33%, and a Brier score of 0.576. These models are also poorly calibrated, indicating overfitting and evidence that the model systematically underpredicts the risk of schizophrenia.
 
-The reason these models perform so much worse than previous 95% models is likely due to the mFPC scores only explaining 90% of the variability compared to 95%, which was used in all the other models. So, it was better to start out with the much larger dataset, as what was gained in terms of fewer predictors was lost in terms of predictive power. 
-
+The reason these models perform so much worse than previous 95% models is likely due to the mFPC scores explaining 5% less variability compared to the previous 95% models. The results suggest that it was preferable to begin with the larger set of predictors. Although reducing the number of predictors yielded a more parsimonious model, the reduction in dimensionality was accompanied by a loss of predictive performance. Consequently, the information removed through feature reduction appeared to outweigh the benefits gained from a smaller predictor set.
 
 ### Comparison of Elastic Net and Ridge Regression models
 
